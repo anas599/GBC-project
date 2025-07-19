@@ -168,7 +168,62 @@ const Chatbot = () => {
     </div>
   );
 };
-/////////styles
+// Responsive styles for mobile views
+const mobileStyles = `
+@media (max-width: 600px) {
+  .ella-container {
+    max-width: 98vw !important;
+    padding: 8px !important;
+    border-radius: 0 !important;
+  }
+  .ella-title {
+    font-size: 1.2rem !important;
+  }
+  .ella-chatbox {
+    height: 45vw !important;
+    min-height: 180px !important;
+    font-size: 15px !important;
+    padding: 4px !important;
+  }
+  .ella-user-bubble, .ella-ai-bubble {
+    font-size: 15px !important;
+    padding: 8px !important;
+    margin: 3px 0 !important;
+  }
+  .ella-speak-btn {
+    font-size: 15px !important;
+    width: 7rem !important;
+    min-width: 7rem !important;
+    max-width: 7rem !important;
+    padding: 6px 0 !important;
+  }
+  .ella-cheer-btn {
+    font-size: 13px !important;
+    padding: 8px 8px !important;
+  }
+  .ella-input {
+    font-size: 15px !important;
+    padding: 8px !important;
+  }
+  .ella-button {
+    font-size: 15px !important;
+    padding: 8px 8px !important;
+  }
+}
+`;
+
+// Inject responsive styles into the document head
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  if (!document.getElementById("ella-mobile-styles")) {
+    const styleTag = document.createElement("style");
+    styleTag.id = "ella-mobile-styles";
+    styleTag.innerHTML = mobileStyles;
+    document.head.appendChild(styleTag);
+  }
+}
+
+// Add classNames to main elements for targeting
+// (You must update the JSX to add these classNames)
 const styles = {
   container: {
     maxWidth: "500px",
