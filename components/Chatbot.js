@@ -128,7 +128,7 @@ const Chatbot = () => {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>Ella – Your AI Companion</h2>
+      <h2 style={styles.title}>Mémoire</h2>
       <div style={styles.chatBox}>
         {chatHistory.map((entry, index) => (
           <div
