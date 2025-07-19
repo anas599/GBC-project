@@ -77,7 +77,13 @@ const Chatbot = () => {
     const lowerInput = userMessage.toLowerCase();
     let aiReply = mockAIResponses.default;
     let cheerUp = false;
-
+    // Scroll to bottom after new message is added
+    setTimeout(() => {
+      const chatBox = document.querySelector('[style*="overflow-y: auto"]');
+      if (chatBox) {
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }, 100);
     if (lowerInput.includes("good")) {
       aiReply = mockAIResponses.good;
     } else if (
